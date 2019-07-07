@@ -1,0 +1,14 @@
+.burger {
+	display: none;
+
+	@media only screen and (max-width: $bp-large) {
+		display: block;
+	}
+}
+
+.burger div {
+	width: 25px;
+	height: 2px;
+	background-color: $color-grey-light-1;
+	margin: 5px;
+}
