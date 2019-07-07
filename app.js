@@ -10,6 +10,7 @@ const app = express();
 // Load Routes
 const indexRoutes = require("./routes/index");
 const userRoutes = require("./routes/users");
+const medicalRoutes = require("./routes/medical");
 
 // Passport config
 require('./config/passport')(passport);
@@ -59,6 +60,7 @@ app.use((req, res, next) => {
 
 app.use('/', indexRoutes);
 app.use('/users', userRoutes);
+app.use('/', medicalRoutes);
 
 const port = process.env.PORT || 3000;
 
