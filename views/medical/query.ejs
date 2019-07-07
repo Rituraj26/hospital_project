@@ -1,9 +1,27 @@
 <% include ../partials/header %>
 
 	<h1>This is the query page</h1>
-	<ul>
-		<li>blood bank <button>see details</button></li>
-		<li>other details <button>see details</button></li>
-	</ul>
+	<form method="GET" action="/query">
+		<input type="text" name="query" placeholder="query">
+		<button type="submit">Search</button>
+	</form>
+	
+	<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+			<% medical.forEach(function(medical){ %>
+				<div class="col-md-3 col-sm-6">
+					<div class="thumbnail">
+					   <img src="<%= medical.image %>">
+					   <div class="caption card-body">
+							<h6 class="card-title"><%= medical.title %></h6>
+							<!-- <p class="card-text"><%= medical.author.firstname %></p>
+							<p class="card-text"><%= medical.author.lastname %></p> -->
+					   </div>
+					   <p>
+						   <a href="/query/<%= medical._id %>" class="btn btn-outline-primary">More Info</a>
+					   </p>
+					</div>
+				</div>
+			<% }); %>
+		</div>
 
 <% include ../partials/footer %>
