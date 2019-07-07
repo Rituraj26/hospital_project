@@ -15,14 +15,28 @@ const Medical = mongoose.model('medicals');
 // Query Routes
 
 router.get('/query', ensureAuthenticated, (req, res) => {
+
+	var noMatch = null;
 	if(req.query.search) {
+		const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+		Medical.find({title: regex}, function(err, medical){
+			if(err){
+				console.log(err);
+			} else {
+				if(medical.length < 1) {
+					noMatch = "No campgrounds match that query, please try again.";
+				}
+				res.render("medical/query", {medical: medical, noMatch: noMatch});
+			}
+		});
 
 	} else {
+		
 		Medical.find({}, (err, medical) => {
 			if(err) {
 				console.log(err);
 			} else {
-				res.render('medical/query', {medical: medical});
+				res.render('medical/query', {medical: medical, noMatch: noMatch});
 			}
 		});
 	}
@@ -90,5 +104,9 @@ router.get('/query/:id', ensureAuthenticated, (req, res) => {
 		}
 	});
 });
+
+function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
 
 module.exports = router;

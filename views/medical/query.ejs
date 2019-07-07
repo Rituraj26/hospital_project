@@ -1,16 +1,24 @@
 <% include ../partials/header %>
 
 	<h1>This is the query page</h1>
-	<form method="GET" action="/query">
-		<input type="text" name="query" placeholder="query">
-		<button type="submit">Search</button>
-	</form>
+	<p>
+		<form action="/query" method="GET" class="form-inline">
+			<div class="form-group">
+				<input type="text" name="search" placeholder="search..." class="form-control">
+				<input type="submit" value="Search" class="btn btn-default">
+			</div>
+		</form>
+	</p>
 	
 	<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+			<div class="col-md-12">
+				<% if(noMatch !== null) { %>
+					<h3><%= noMatch %></h3>
+				<% } %>
+			</div>
 			<% medical.forEach(function(medical){ %>
 				<div class="col-md-3 col-sm-6">
 					<div class="thumbnail">
-					   <img src="<%= medical.image %>">
 					   <div class="caption card-body">
 							<h6 class="card-title"><%= medical.title %></h6>
 							<!-- <p class="card-text"><%= medical.author.firstname %></p>
