@@ -49,48 +49,58 @@ router.get('/upload', ensureAuthenticated, (req, res) => {
 });
 
 router.post('/upload', ensureAuthenticated, (req, res) => {
-	let errors = [];
+	// let errors = [];
 
-	if(!req.body.title) {
-		errors.push({text: 'Please add a title'});
-	}
+	// if(!req.body.title) {
+	// 	errors.push({text: 'Please add a title'});
+	// }
 
-	if(!req.body.firstname) {
-		errors.push({text: 'Please add the firstname'});
-	}
+	// if(!req.body.firstname) {
+	// 	errors.push({text: 'Please add the firstname'});
+	// }
 
-	if(!req.body.lastname) {
-		errors.push({text: 'Please add the lastname'});
-	}
+	// if(!req.body.lastname) {
+	// 	errors.push({text: 'Please add the lastname'});
+	// }
 
-	if(errors.length > 0) {
-		res.render('/upload', {
-			errors: errors,
-			title: req.body.title,
-			author: {
-				firstname: req.body.firstname,
-				lastname: req.body.lastname
-			}
-		});
-	} else {
-		const newUser = {
-			title: req.body.title,
-			author: {
-				firstname: req.body.firstname,
-				lastname: req.body.lastname
-			},
-			user: {
-				id: req.user._id,
-				username: req.user.username
-			}
+	// if(errors.length > 0) {
+	// 	res.render('/upload', {
+	// 		errors: errors,
+	// 		title: req.body.title,
+	// 		author: {
+	// 			firstname: req.body.firstname,
+	// 			lastname: req.body.lastname
+	// 		}
+			
+	// 	});
+	// } else {
+	// 	const newUser = {
+	// 		title: req.body.title,
+	// 		author: {
+	// 			firstname: req.body.firstname,
+	// 			lastname: req.body.lastname
+	// 		},
+	// 		user: {
+	// 			id: req.user._id,
+	// 			username: req.user.username
+	// 		}
+	// 	}
+	// 	new Medical(req.body.medical)
+	// 		.save()
+	// 		.then(medical => {
+	// 			req.flash('success__msg', 'New data added');
+	// 			res.redirect('/query');
+	// 		});
+		
+	// }
+	Medical.create(req.body.medical, (err, medical) => {
+		if(err) {
+			req.flash('error_msg', err.message);
+			return res.redirect('back');
 		}
-		new Medical(newUser)
-			.save()
-			.then(medical => {
-				req.flash('success__msg', 'New data added');
-				res.redirect('/query');
-			});
-	}
+		req.flash('success__msg', 'New data added');
+		res.redirect('/query');
+	});
 });
 
 // More Info Routes
