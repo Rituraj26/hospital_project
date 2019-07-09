@@ -1,0 +1,68 @@
+.contact {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, min-content);
+	grid-gap: 3rem;
+	justify-items: center;
+	// align-items: center;
+
+	padding: 5rem;
+	
+
+	&__header {
+		grid-column: 1 / -1;
+		grid-row: 1 / span 1;
+	}
+
+	&__left {
+		grid-column: 1 / span 1;
+		grid-row: 2 / span 1;
+
+		display: grid;
+		padding: 6rem;
+
+		&--form {
+			display: grid;
+
+			& > * {
+				margin-bottom: 2rem;
+				height: 3rem;
+			}
+
+			textarea {
+				height: 7rem;
+			}
+
+			button {
+				justify-self: right;
+				width: 15rem;
+				
+				// font-family: $font-display;
+				// background-color: transparent;
+				// outline: 0;
+			}
+		}
+
+		p {
+			font-size: 2rem;
+		}
+	}
+
+	&__right {
+		grid-column: 2 / span 1;
+		grid-row: 2 / span 1;
+		justify-self: start;
+
+		display: grid;
+		padding: 6rem;
+
+		&--card {
+			display: grid;
+			grid-template-columns: 30% 70%;
+		}
+
+		p {
+			font-size: 2rem;
+		}
+	}
+}

@@ -4,12 +4,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<!-- <link rel="stylesheet" href="/stylesheets/css/style.css"> -->
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i" rel="stylesheet">
+	<link rel="stylesheet" href="/stylesheets/css/style.css">
 	<style>
-		body {
-			padding: 10px 100px;
-		}
 		.def {
 			color: red;
 		}
@@ -29,14 +27,11 @@
 		</div>
 	</nav> -->
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-		<a class="navbar-brand" href="/">Home</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			  <span class="navbar-toggler-icon"></span>
-		</button>
+	<nav class="navbar">
+		<a class="navbar__logo" href="/">Home</a>
 	  
-		<div class="collapse navbar-collapse justify-content-end" id="collapsenavbar">
-				<ul class="navbar-nav">
+		<div class="navbar__container">
+				<ul class="navbar__list">
 					<% if(!user) { %>
 						<ul class="navbar__links">
 							<li><a href="/users/login">Sign in</a></li>
@@ -55,7 +50,7 @@
 		  </div>
   	</nav>
 
-	<div class="container">
+	<div>
 		<% if(error_msg && error_msg.length > 0) { %>
 		  <div class="alert alert-danger"><p><%= error_msg %></p></div>
 		<% } %>
