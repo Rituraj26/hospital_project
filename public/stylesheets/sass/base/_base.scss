@@ -31,7 +31,8 @@ body {
 
 .container {
 	display: grid;
-	grid-template-rows: 8vh 50vh repeat(3, min-content) ;
+	// grid-template-rows: 8vh 50vh repeat(3, min-content) ;
+	grid-template-rows: 8vh repeat(3, 60vh);
 	grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(10, [col-start] minmax(min-content, 12rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 	justify-items: center;
 

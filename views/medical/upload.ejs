@@ -1,76 +1,113 @@
 <% include ../partials/header %>
 
-	<h1>This is the upload page</h1>
+	<div class="upload">
+		<form class="upload__form" method="POST" action="/upload">
+			
+			<div class="upload__form--group">
+				<div class="upload__form--heading">
+					Medical Details
+				</div>
+				<div class="upload__form--input">
+					<label for="definition">Definition</label>
+					<input type="text" id="definition" name="medical[definition]" placeholder="definition">		
+				</div>
+				<div class="upload__form--input">
+					<label for="keyword">Keyword</label>
+					<input type="text" id="keyword" name="medical[keyword]" placeholder="keyword">		
+				</div>
+				<div class="upload__form--input">
+					<label for="source">Source</label>
+					<input type="text" id="source" name="medical[source]" placeholder="source">	
+				</div>
+				<div class="upload__form--input">
+					<label for="organisation">Organisation</label>
+					<input type="text" id="organisation" name="medical[organisation]" placeholder="organisation">		
+				</div>
+				<div class="upload__form--input">
+					<label for="author">Author</label>
+					<input type="text" id="author" name="medical[author]" placeholder="author">			
+				</div>
+				<div class="upload__form--input">
+					<label for="journal">Journal</label>
+					<input type="text" id="journal" name="medical[journal]" placeholder="journal">		
+				</div>
+				<div class="upload__form--input">
+					<label for="comment">Comment</label>
+					<textarea id="comment" name="medical[comment]"></textarea>	
+				</div>
+			</div>
+			
+			<div class="upload__form--group">
+				
+				<div class="upload__form--heading">
+					Personal details
+				</div>
+				<div class="upload__form--input">
+					<label for="patient_code">Patient code</label>
+					<input type="text"id="patient_code" name="medical[patient_code]" placeholder="patient_code">
+				</div>
+				<div class="upload__form--input">
+					<label for="patient_sex">Patient sex</label>
+					<input type="text" id="patient_sex" name="medical[patient_sex]" placeholder="patient_sex">
+				</div>
+				<div class="upload__form--input">
+					<label for="patient_age">Patient age</label>
+					<input type="text" id="patient_age" name="medical[patient_age]" placeholder="patient_sex">
+				</div>
+				<div class="upload__form--input">
+					<label for="CD4_count">CD4 Count</label>
+					<input type="text" id="CD4_count" name="medical[cd4_count]" placeholder="CD4_count">
+				</div>
+				<div class="upload__form--input">
+					<label for="Sample_city">Sample City</label>
+					<input type="text" id="Sample_city" name="medical[sample_city]" placeholder="Sample_city">
+				</div>
+				<div class="upload__form--input">
+					<label for="Sample_tissue">Sample Tissue</label>
+					<input type="text" id="Sample_tissue" name="medical[sample_tissue]" placeholder="Sample_tissue">
+				</div>
+				<div class="upload__form--input">
+					<label for="Risk_factor">Risk Factor</label>
+					<input type="text" id="Risk_factor" name="medical[risk_factor]" placeholder="Risk_factor">
+				</div>
+				<div class="upload__form--input">
+					<label for="patient_health_status">Patient health status</label>
+					<input type="text" id="patient_health_status" name="medical[patient_health_status]" placeholder="patient_health_status">
+				</div>
+				<div class="upload__form--input">
+					<label for="Amplification_strategy">Amplification Strategy</label>
+					<input type="text" id="Amplification_strategy" name="medical[amplification_strategy]" placeholder="Amplification_strategy">
+				</div>
+				<div class="upload__form--input">
+					<label for="Drug_naive">Drug naive</label>
+					<input type="text" id="Drug_naive" name="medical[drug_naive]" placeholder="Drug_naive">
+				</div>
+				<div class="upload__form--input">
+					<label for="patient_comment">Patient comment</label>
+					<textarea id="patient_comment" name="medical[patient_comment]"></textarea>
+				</div>
 
-	<!-- <form method="POST" action="/upload">
-		<div>
-			<label for="title">Title</label>
-			<input type="text" id="title" name="title" required>
-		</div>
-		<div>
-			<label for="firstname">Firstname</label>
-			<input type="text" id="firstname" name="firstname" required>
-		</div>
-		<div>
-			<label for="lastname">Lastname</label>
-			<input type="text" id="lastname" name="lastname" required>
-		</div>
-		<button type="submit">Submit</button>
-	</form> -->
+			</div>
+			<div class="upload__form--group">
+				<div class="upload__form--heading">
+					Institutional details
+				</div>
+				<div class="upload__form--input">
+					<label for="institute_name">Institute Name</label>
+					<input type="text" id="institute_name" name="medical[institute_name]" placeholder="institute_name">
+				</div>
+				<div class="upload__form--input">
+					<label for="institute_area">Institute Area</label>
+					<input type="text" id="institute_area" name="medical[institute_area]" placeholder="institute_area">
+				</div>
+				<div class="upload__form--input">
+					<label for="institute_city">Institute City</label>
+					<input type="text" id="institute_city" name="medical[institute_city]" placeholder="institute_city">
+				</div>
 
-	<form method="POST" action="/upload">
-		<div>
-			<h3>Medical Details</h3>
-			<label for="definition">Definition</label>
-			<input type="text" id="definition" name="medical[definition]" placeholder="definition">
-			<label for="keyword">Keyword</label>
-			<input type="text" id="keyword" name="medical[keyword]" placeholder="keyword">
-			<label for="source">Source</label>
-			<input type="text" id="source" name="medical[source]" placeholder="source">
-			<label for="organisation">Organisation</label>
-			<input type="text" id="organisation" name="medical[organisation]" placeholder="organisation">
-			<label for="author">Author</label>
-			<input type="text" id="author" name="medical[author]" placeholder="author">
-			<label for="journal">Journal</label>
-			<input type="text" id="journal" name="medical[journal]" placeholder="journal">
-			<label for="comment">Comment</label>
-			<textarea id="comment" name="medical[comment]"></textarea>
-		</div>
-		<div>
-			<h3>Personal details</h3>
-			<label for="patient_code">Patient code</label>
-			<input type="text"id="patient_code" name="medical[patient_code]" placeholder="patient_code">
-			<label for="patient_sex">Patient sex</label>
-			<input type="text" id="patient_sex" name="medical[patient_sex]" placeholder="patient_sex">
-			<label for="patient_age">Patient age</label>
-			<input type="text" id="patient_age" name="medical[patient_age]" placeholder="patient_sex">
-			<label for="CD4_count">CD4 Count</label>
-			<input type="text" id="CD4_count" name="medical[cd4_count]" placeholder="CD4_count">
-			<label for="Sample_city">Sample City</label>
-			<input type="text" id="Sample_city" name="medical[sample_city]" placeholder="Sample_city">
-			<label for="Sample_tissue">Sample Tissue</label>
-			<input type="text" id="Sample_tissue" name="medical[sample_tissue]" placeholder="Sample_tissue">
-			<label for="Risk_factor">Risk Factor</label>
-			<input type="text" id="Risk_factor" name="medical[risk_factor]" placeholder="Risk_factor">
-			<label for="patient_health_status">Patient health status</label>
-			<input type="text" id="patient_health_status" name="medical[patient_health_status]" placeholder="patient_health_status">
-			<label for="Amplification_strategy">Amplification Strategy</label>
-			<input type="text" id="Amplification_strategy" name="medical[amplification_strategy]" placeholder="Amplification_strategy">
-			<label for="Drug_naive">Drug naive</label>
-			<input type="text" id="Drug_naive" name="medical[drug_naive]" placeholder="Drug_naive">
-			<label for="patient_comment">Patient comment</label>
-			<textarea id="patient_comment" name="medical[patient_comment]"></textarea>
-		</div>
-		<div>
-			<h3>Institutional details</h3>
-			<label for="institute_name">Institute Name</label>
-			<input type="text" id="institute_name" name="medical[institute_name]" placeholder="institute_name">
-			<label for="institute_area">Institute Area</label>
-			<input type="text" id="institute_area" name="medical[institute_area]" placeholder="institute_area">
-			<label for="institute_city">Institute City</label>
-			<input type="text" id="institute_city" name="medical[institute_city]" placeholder="institute_city">
-		</div>
-		<button type="submit">Submit</button>
-	</form>
+			</div>
+			<button class="btn-outline" type="submit">Submit</button>
+		</form>
+	</div>
 
 <% include ../partials/footer %>

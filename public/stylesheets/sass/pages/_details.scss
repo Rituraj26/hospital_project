@@ -1,0 +1,28 @@
+.details {
+	// padding: 10rem;
+	&__group {
+		// border: 1px solid black;
+		margin-bottom: 5rem;
+
+		display: grid;
+		// grid-template-columns: repeat(2, 50%);
+		grid-gap: 3rem;
+
+		h2 {
+			background-color: rgb(255, 202, 103);
+			text-align: center;
+			padding: 1.5rem;
+			grid-column: 1 / -1;
+		}
+
+		&--data {
+			display: grid;
+			grid-template-columns: 30% 50%;
+			grid-gap: 4rem;
+
+			h4 {
+				justify-self: end;
+			}
+		}
+	}
+}

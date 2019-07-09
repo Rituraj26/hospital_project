@@ -28,26 +28,31 @@
 	</nav> -->
 
 	<nav class="navbar">
-		<a class="navbar__logo" href="/">Home</a>
+
+		<div class="navbar__logo">
+			<a class="navbar__logo" href="/">Home</a>
+		</div>
 	  
-		<div class="navbar__container">
-				<ul class="navbar__list">
-					<% if(!user) { %>
-						<ul class="navbar__links">
-							<li><a href="/users/login">Sign in</a></li>
-							<li><a href="/users/register">Sign up</a></li>
-							<li><a href="/contact">Contact</a></li>
-						</ul>
-					<% } else { %>
-						<ul class="navbar__links">
-							<li><a href="/query">Query</a></li>
-							<li><a href="/upload">Upload</a></li>
-							<li><a href="/contact">Contact</a></li>
-							<li><a href="/users/logout">Logout</a></li>
-						</ul>
-					<% } %>
+			<% if(!user) { %>
+				<ul class="navbar__links">
+					<li><a href="/users/login">Sign in</a></li>
+					<li><a href="/users/register">Sign up</a></li>
+					<li><a href="/contact">Contact</a></li>
 				</ul>
-		  </div>
+			<% } else { %>
+				<ul class="navbar__links">
+					<li><a href="/query">Query</a></li>
+					<li><a href="/upload">Upload</a></li>
+					<li><a href="/contact">Contact</a></li>
+					<li><a href="/users/logout">Logout</a></li>
+				</ul>
+			<% } %>
+
+			<div class="burger">
+				<div class="line-1"></div>
+				<div class="line-2"></div>
+				<div class="line-3"></div>
+			</div>
   	</nav>
 
 	<div>

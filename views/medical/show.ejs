@@ -1,30 +1,101 @@
 <% include ../partials/header %>
 
-	<h1>Details Page</h1>
-	<div>
-		<h3><span class="def">Definition: </span><%= details.definition %></h3>
-		<p>Keyword: <%= details.keyword %></p>
-		<p>Source: <%= details.source %></p>
-		<p>Organisation: <%= details.organisation %></p>
-		<p>Author: <%= details.author %></p>
-		<p>Journal: <%= details.journal %></p>
-		<p>Comment: <%= details.comment %></p>
-		<p>Patient Code: <%= details.patient_code %></p>
-		<p>Patient Sex: <%= details.patient_sex %></p>
-		<p>Patient Age: <%= details.patient_age %></p>
-		<p>CD4 Count: <%= details.cd4_count %></p>
-		<p>Sample City: <%= details.sample_city %></p>
-		<p>Sample Tissue: <%= details.sample_tissue %></p>
-		<p>Risk Factor: <%= details.risk_factor %></p>
-		<p>Patient Health Status: <%= details.patient_health_status %></p>
-		<p>Amplification Strategy: <%= details.amplification_strategy %></p>
-		<p>Drug Naive: <%= details.drug_naive %></p>
-		<p>Patient Comment: <%= details.patient_comment %></p>
-		<p>Institute Name: <%= details.institute_name %></p>
-		<p>Institute Area: <%= details.institute_area %></p>
-		<p>Institute City: <%= details.institute_city %></p>
+	<div class="details">
+		<div class="details__group">
+			<h2 class="heading-2">MEDICAL DETAILS</h2>
+			<div class="details__group--data">
+				<h4 class="heading-4">Definition</h4>
+				<p class="paragraph"><%= details.definition %></p>
+			</div>
+			<div class="details__group--data">
+				<h4 class="heading-4">Keyword</h4>
+				<p class="paragraph"><%= details.keyword %></p>
+			</div>
+			<div class="details__group--data">
+				<h4 class="heading-4">Source</h4>
+				<p class="paragraph"><%= details.source %></p>
+			</div>
+			<div class="details__group--data">
+				<h4 class="heading-4">Organisation</h4>
+				<p class="paragraph"><%= details.organisation %></p>
+			</div>
+			<div class="details__group--data">
+				<h4 class="heading-4">Author</h4>
+				<p class="paragraph"><%= details.author %></p>
+			</div>
+			<div class="details__group--data">
+				<h4 class="heading-4">Journal</h4>
+				<p class="paragraph"><%= details.journal %></p>
+			</div>
+			<div class="details__group--data">
+				<h4 class="heading-4">Comment</h4>
+				<p class="paragraph"><%= details.comment %></p>
+			</div>
+		</div>
+
+		<div class="details__group">
+			<h2 class="heading-2">PERSONAL DETAILS</h2>
+			<div class="details__group--data">
+				<h4 class="heading-4">Patient Code</h4>
+				<p class="paragraph"><%= details.patient_code %></p>
+			</div>
+			<div class="details__group--data">
+				<h4 class="heading-4">Patient Sex</h4>
+				<p class="paragraph"><%= details.patient_sex %></p>
+			</div>
+			<div class="details__group--data">
+				<h4 class="heading-4">Patient Age</h4>
+				<p class="paragraph"><%= details.patient_age %></p>
+			</div>
+			<div class="details__group--data">
+				<h4 class="heading-4">CD4 Count</h4>
+				<p class="paragraph"><%= details.cd4_count %></p>
+			</div>
+			<div class="details__group--data">
+				<h4 class="heading-4">Sample City</h4>
+				<p class="paragraph"><%= details.sample_city %></p>
+			</div>
+			<div class="details__group--data">
+				<h4 class="heading-4">Sample Tissue</h4>
+				<p class="paragraph"><%= details.sample_tissue %></p>
+			</div>
+			<div class="details__group--data">
+				<h4 class="heading-4">Risk Factor</h4>
+				<p class="paragraph"><%= details.risk_factor %></p>
+			</div>
+			<div class="details__group--data">
+				<h4 class="heading-4">Patient Health Status</h4>
+				<p class="paragraph"><%= details.patient_health_status %></p>
+			</div>
+			<div class="details__group--data">
+				<h4 class="heading-4">Amplification Strategy</h4>
+				<p class="paragraph"><%= details.amplification_strategy %></p>
+			</div>
+			<div class="details__group--data">
+				<h4 class="heading-4">Drug Naive</h4>
+				<p class="paragraph"><%= details.drug_naive %></p>
+			</div>
+			<div class="details__group--data">
+				<h4 class="heading-4">Patient Comment</h4>
+				<p class="paragraph"><%= details.patient_comment %></p>
+			</div>
+		</div>
+
+		<div class="details__group">
+			<h2 class="heading-2">INSTITUTIONAL DETAILS</h2>
+			<div class="details__group--data">
+				<h4 class="heading-4">Institute Name</h4>
+				<p class="paragraph"><%= details.institute_name %></p>
+			</div>
+			<div class="details__group--data">
+				<h4 class="heading-4">Institute Area</h4>
+				<p class="paragraph"><%= details.institute_area %></p>
+			</div>
+			<div class="details__group--data">
+				<h4 class="heading-4">Institute City</h4>
+				<p class="paragraph"><%= details.institute_city %></p>
+			</div>
+		</div>
 	</div>
-	<br>
-	<hr>
 
 <% include ../partials/footer %>

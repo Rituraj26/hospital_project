@@ -1,0 +1,46 @@
+.upload {
+	// display: grid;
+	&__form {
+		padding: 10rem;
+
+		&--group {
+			display: grid;
+			grid-template-columns: repeat(2, 50%);
+			grid-row-gap: 5rem;
+			grid-column-gap: 3rem;
+			justify-content: center;
+
+			margin-bottom: 6rem;
+		}
+
+		&--heading {
+			grid-column: 1 / -1;
+			justify-self: center;
+			font-size: 3rem;
+			text-transform: uppercase;
+		}
+
+		&--input {
+			display: grid;
+			grid-gap: 1.5rem;
+			font-size: 2rem;
+
+			input {
+				height: 4rem;
+				font-size: 1.7rem;
+				padding: .2rem;
+			}
+
+			&:last-child {
+				grid-column: 1 / -1;
+				height: 6rem;
+			}
+		}
+
+		button {
+			width: 20rem;
+			height: 5rem;
+			font-size: 1.6rem;
+		}
+	}
+}

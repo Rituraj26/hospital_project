@@ -1,35 +1,33 @@
 <% include ../partials/header %>
 
-	<h1>This is the query page</h1>
-	<p>
-		<form action="/query" method="GET" class="form-inline">
-			<div class="form-group">
-				<input type="text" name="search" placeholder="search..." class="form-control">
-				<input type="submit" value="Search" class="btn btn-default">
-			</div>
-		</form>
-	</p>
-	
-	<div class="row text-center" style="display:flex; flex-wrap: wrap;">
-			<div class="col-md-12">
+	<div class="query">
+		<div class="query__header">
+			<form action="/query" method="GET">
+				<div class="query__header--input">
+					<input type="text" name="search" placeholder="search..." class="form-control">
+					<!-- <input type="submit" value="Search" class="btn-outline"> -->
+					<button class="btn-outline" type="submit">Search</button>
+				</div>
+			</form>
+		</div>
+
+		<div class="query__results">
+			<div class="">
 				<% if(noMatch !== null) { %>
 					<h3><%= noMatch %></h3>
 				<% } %>
 			</div>
 			<% medical.forEach(function(medical){ %>
-				<div class="col-md-3 col-sm-6">
-					<div class="thumbnail">
-					   <div class="caption card-body">
-							<h6 class="card-title"><%= medical.organisation %></h6>
-							<!-- <p class="card-text"><%= medical.author.firstname %></p>
-							<p class="card-text"><%= medical.author.lastname %></p> -->
-					   </div>
-					   <p>
-						   <a href="/query/<%= medical._id %>" class="btn btn-outline-primary">More Info</a>
-					   </p>
-					</div>
+				<div class="query__results--list">
+					<h4 class="heading-4"><%= medical.organisation %></h6>
+					<p class="paragraph"><%= medical.definition %></p>
+					<a href="/query/<%= medical._id %>" class="btn-outline">More Info</a>
 				</div>
 			<% }); %>
 		</div>
+	</div>
+	<p>
+		
+	</p>
 
 <% include ../partials/footer %>
