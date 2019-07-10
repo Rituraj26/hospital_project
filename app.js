@@ -7,6 +7,9 @@ const flash = require('connect-flash');
 
 const app = express();
 
+// Flash Middleware
+app.use(flash());
+
 // Load Routes
 const indexRoutes = require("./routes/index");
 const userRoutes = require("./routes/users");
@@ -42,9 +45,6 @@ app.use(expressSession({
 // Passport Middleware
 app.use(passport.initialize());
 app.use(passport.session());
-
-// Flash Middleware
-app.use(flash());
 
 // Global Variables
 

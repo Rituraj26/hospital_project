@@ -19,12 +19,12 @@ router.get('/query', ensureAuthenticated, (req, res) => {
 	var noMatch = null;
 	if(req.query.search) {
 		const regex = new RegExp(escapeRegex(req.query.search), 'gi');
-		Medical.find({title: regex}, function(err, medical){
+		Medical.find({definition: regex}, function(err, medical){
 			if(err){
 				console.log(err);
 			} else {
 				if(medical.length < 1) {
-					noMatch = "No campgrounds match that query, please try again.";
+					noMatch = "No details match that query, please try again.";
 				}
 				res.render("medical/query", {medical: medical, noMatch: noMatch});
 			}
